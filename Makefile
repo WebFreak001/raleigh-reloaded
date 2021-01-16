@@ -1,5 +1,5 @@
 SHELL     = /bin/sh
-PREFIX    = /usr
+PREFIX    = $(HOME)/.local/
 THEMENAME = Raleigh-Reloaded
 
 .PHONY: install uninstall watch
