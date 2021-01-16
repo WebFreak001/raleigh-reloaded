@@ -41,7 +41,7 @@
 selection,
 *:selected,
 .view:selected {
-	background: @theme_bg_color;
+	background: alpha(@theme_selected_bg_color, 0.6);
 	color: @theme_fg_color;
 }
 selection:focus,
