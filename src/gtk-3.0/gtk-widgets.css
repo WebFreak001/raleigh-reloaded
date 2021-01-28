@@ -539,7 +539,7 @@ scale trough,
 treeview.view.trough,
 treeview.view.trough:selected,
 scrollbar {
-	background-color: shade(@theme_bg_color, .9);
+	background-color: shade(@theme_bg_color, .75);
 	border: solid 1px shade(@theme_bg_color, .6);
 	border-bottom-color: white;
 	border-right-color: white;
