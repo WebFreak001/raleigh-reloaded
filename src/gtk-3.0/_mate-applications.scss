@@ -41,22 +41,22 @@
 	padding: 2px;
 }
 .caja-navigation-window notebook .view {
-	background: @theme_base_color;
+	background: $base_color;
 }
 .caja-navigation-window notebook *:selected {
-	background: @theme_bg_color;
-	color: @theme_fg_color;
+	background: $bg_color;
+	color: $fg_color;
 }
 .caja-navigation-window notebook *:focus .view:selected {
-	background-color: @theme_selected_bg_color;
-	color: @theme_selected_fg_color;
+	background-color: $selected_bg_color;
+	color: $selected_fg_color;
 }
 .caja-navigation-window notebook .view.rubberband {
-	background-color: alpha(@theme_selected_bg_color, 0.3);
-	border: 1px solid @theme_selected_bg_color;
+	background-color: transparentize($selected_bg_color, 0.7);
+	border: 1px solid $selected_bg_color;
 }
 .caja-notebook stack > box > frame > border {
-	background: @theme_info_bg_color;
+	background: $info_bg_color;
 }
 .caja-side-pane notebook scrolledwindow,
 .caja-notebook scrolledwindow {
@@ -123,10 +123,10 @@ GvcMixerDialog border {
 	padding: 10px;
 }
 GvcMixerDialog gvc-level-bar * {
-	background: shade(@theme_bg_color, 0.9);
+	background: shade($bg_color, 0.9);
 }
 GvcMixerDialog gvc-level-bar *:selected {
-	background: @theme_selected_bg_color;
+	background: $selected_bg_color;
 }
 
 /***************

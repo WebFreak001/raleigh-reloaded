@@ -1,0 +1,490 @@
+/** Copyright (c) 2017 Vlasta Vesely <vlastavesely@protonmail.ch> This file is part of Raleigh Reloaded GTK theme. This is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 as published by the Free Software Foundation. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>. */
+/** Copyright (c) 2017 Vlasta Vesely <vlastavesely@protonmail.ch> This file is part of Raleigh Reloaded GTK theme. This is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 as published by the Free Software Foundation. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>. */
+/*********** general * */
+* { -gtk-icon-style: regular; /* disable symbolic icons */ }
+
+.background { background-color: #dcdad5; color: #000000; }
+
+*:disabled { color: shade(#dcdad5, 0.6); text-shadow: 1px 1px #ffffff; -gtk-icon-effect: dim; }
+
+.flat:not(:hover):not(:checked) { border: 0; }
+
+/************* selection * */
+selection, *:selected, .view:selected { background: rgba(75, 105, 131, 0.6); color: #000000; }
+
+selection:focus, *:selected:focus, .view:selected:focus, *:focus *:selected { background-color: #4b6983; color: #ffffff; }
+
+.rubberband, .view.rubberband, rubberband { background-color: rgba(75, 105, 131, 0.3); border: 1px solid #4b6983; }
+
+/*********** buttons * */
+button, .button { background: #dcdad5; border-image: url("assets/button.png") 3/3px stretch; padding: .35em; }
+
+button:hover, .button:hover { background-color: shade(#dcdad5, 1.05); }
+
+button:active, button:active:hover, button.toggle:checked, button.toggle:active:hover, stackswitcher button:checked, .button:active, .button:active:hover, .button.toggle:checked, .button.toggle:active:hover, stackswitcher .button:checked { background-color: shade(#dcdad5, 0.9); border-image-source: url("assets/button-pressed.png"); }
+
+button:focus, .button:focus { border-image-source: url("assets/button-focus.png"); }
+
+button:disabled, .button:disabled { border-image-source: url("assets/button-disabled.png"); }
+
+button.link, .button.link { color: #0022ff; }
+
+button.link > label, .button.link > label { text-decoration-line: underline; }
+
+button.color *, .button.color * { border-image: url("assets/frame-etched-out.png") 2/2px stretch; margin: 0 .3em; min-height: 1.2em; }
+
+/************** scrollbars * */
+scrollbar button, scrollbar button:hover, scrollbar button:active, scrollbar button:active:hover, scrollbar button:disabled { background: #dcdad5 no-repeat; color: black; font-size: .8em; min-height: .8rem; min-width: .8rem; padding: 2px; }
+
+scrollbar button:disabled { color: shade(#dcdad5, 0.6); }
+
+scrollbar slider { background: #dcdad5; border-image: url("assets/button.png") 2/2px stretch; }
+
+scrollbar slider:hover { background-color: shade(#dcdad5, 1.05); }
+
+scrollbar.vertical slider { min-height: .5rem; min-width: .8rem; padding: 2px; }
+
+scrollbar.horizontal slider { min-height: .8rem; min-width: .5rem; padding: 2px; }
+
+scrollbar.vertical button.up { -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
+
+scrollbar.vertical button.down { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
+
+scrollbar.horizontal button.up { -gtk-icon-source: -gtk-icontheme("pan-start-symbolic"); }
+
+scrollbar.horizontal button.down { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
+
+/************** checkboxes * */
+check, radio { margin: .3em .4em .3em .3em; min-height: 1em; min-width: 1em; }
+
+checkbutton:hover, radiobutton:hover { background-color: shade(#dcdad5, 1.05); }
+
+checkbutton label, radiobutton label { padding-right: .5em; }
+
+check:disabled, radio:disabled { border-color: shade(#dcdad5, 0.6); }
+
+check { -gtk-icon-source: url("assets/checkbox-unchecked.png"); }
+
+check:checked { -gtk-icon-source: url("assets/checkbox-checked.png"); }
+
+check:checked:disabled { -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-disabled.png")); }
+
+check:disabled { -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-disabled.png")); }
+
+check:indeterminated { -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed.png")); }
+
+check:indeterminated:disabled { -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-disabled.png")); }
+
+/****************** radion buttons * */
+radio, .view.cellradio { -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked.png")); margin: .3em .4em .3em .3em; min-height: 1em; min-width: 1em; }
+
+radio:checked { -gtk-icon-source: -gtk-scaled(url("assets/radio-checked.png")); }
+
+radio:disabled { -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked-disabled.png")); }
+
+radio:checked:disabled { -gtk-icon-source: -gtk-scaled(url("assets/radio-checked-disabled.png")); }
+
+/**************** text entries * */
+entry { background: #ffffff; border-image: url("assets/entry.png") 2/2px stretch; padding: .35em; }
+
+entry:disabled { background-color: shade(#dcdad5, 1.05); }
+
+/**************** spin buttons * */
+spinbutton { background: #dcdad5; border-image: url("assets/entry.png") 2/2px stretch; }
+
+spinbutton * { background: #ffffff; }
+
+spinbutton button { background: #dcdad5; }
+
+/************** comboboxes * */
+combobox arrow { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); color: #000000; margin: -.1em; min-height: 1.5em; min-width: 1.5em; }
+
+combobox button:first-child arrow { border-image: url("assets/combobox-arrow-separator.png") 2/2px stretch; padding-left: .5em; }
+
+/********* menus * */
+menubar { border-image: url("assets/button.png") 2/2px stretch; -GtkWidget-window-dragging: true; padding: 1px; }
+
+menubar decoration, .popup decoration { border: 0; }
+
+menu { background: #dcdad5; border: solid 2px; border-image: url("assets/menu.png") 3/3px stretch; padding: 1px; }
+
+menubar > menuitem { margin: 0; padding: .3em .4em; }
+
+menubar > menuitem:hover { background: #4b6983; color: #ffffff; }
+
+menuitem { margin: 1px; padding: 3px; }
+
+menuitem:hover { background-color: #4b6983; color: #ffffff; }
+
+menu separator { border-image: url("assets/separator-horizontal.png") 1/1px stretch; min-height: 1px; margin: .2em .4em; }
+
+menuitem > check, menuitem > radio, menuitem > arrow, menuitem > image { min-height: 1em; min-width: 1em; }
+
+menuitem > arrow { font-size: 1.4em; margin: -.2em 0 -.2em 1em; -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
+
+/************* notebooks * */
+notebook { padding: 0; }
+
+notebook.frame { border-image: url("assets/notebook.png") 3/3px stretch; }
+
+notebook header { background: #dcdad5; }
+
+notebook header.top { border-image: url("assets/notebook-header-top.png") 2/2px stretch; padding-bottom: 2px; }
+
+notebook header.bottom { border-image: url("assets/notebook-header-bottom.png") 2/2px stretch; padding-top: 2px; }
+
+notebook header.left { border-image: url("assets/notebook-header-left.png") 2/2px stretch; padding-right: 2px; }
+
+notebook header.right { border-image: url("assets/notebook-header-right.png") 2/2px stretch; padding-left: 2px; }
+
+notebook header.top tabs { margin-top: 2px; }
+
+notebook header.bottom tabs { margin-bottom: 2px; }
+
+notebook header.left tabs { margin-left: 2px; }
+
+notebook header.right tabs { margin-right: 2px; }
+
+notebook tab, notebook.frame > .frame { background: shade(#dcdad5, 0.9); padding: .3em .4em; }
+
+notebook header.top tab, notebook.frame > .frame.top { border-image: url("assets/notebook-tab-top.png") 2/2px stretch; }
+
+notebook header.bottom tab, notebook.frame > .frame.bottom { border-image: url("assets/notebook-tab-bottom.png") 2/2px stretch; }
+
+notebook header.left tab, notebook.frame > .frame.left { border-image: url("assets/notebook-tab-left.png") 2/2px stretch; }
+
+notebook header.right tab, notebook.frame > .frame.right { border-image: url("assets/notebook-tab-right.png") 2/2px stretch; }
+
+notebook header tab:checked, notebook.frame > .frame:active { background: #dcdad5; }
+
+notebook header.top tab:checked { margin-bottom: -1px; margin-top: -2px; }
+
+notebook header.bottom tab:checked { margin-bottom: -2px; margin-top: -2px; }
+
+notebook header.left tab:checked { margin-left: -2px; margin-right: -1px; }
+
+notebook header.right tab:checked { margin-left: -2px; margin-right: -2px; }
+
+notebook tab button { background-color: transparent; border: 0; }
+
+notebook.frame > .frame { padding: .15rem; }
+
+/************ expander * */
+expander arrow { min-width: 16px; min-height: 16px; -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
+
+expander arrow:checked { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
+
+/******************************** CSD header and window border * */
+headerbar { background-color: #dcdad5; border-bottom: solid 1px shade(#dcdad5, 0.8); padding: 7px; }
+
+decoration { background-color: #dcdad5; border: solid 3px #dcdad5; border-image: url("assets/button.png") 3/3px stretch; }
+
+/**************************** application notification * */
+.app-notification { background-color: #a7c6e1; border-image: url("assets/frame-etched-out.png") 3/3px stretch; padding: 7px; }
+
+.app-notification border { border: 0; }
+
+/************ popovers * */
+popover { border: solid 1px shade(#dcdad5, 0.5); }
+
+popover .flat { padding: 5px; }
+
+/*********** toolbar * */
+toolbar { background: #dcdad5; border-image: url("assets/button.png") 3/3px stretch; padding: 3px; }
+
+toolbar separator { border-image: url("assets/separator-vertical.png") 1/1px stretch; margin: 5px; padding: 1px; }
+
+/************* statusbar * */
+statusbar button { padding: 2px; }
+
+statusbar button:active:hover, statusbar button.toggle:checked, statusbar button.toggle:active:hover { padding: 3px 1px 1px 3px; }
+
+statusbar frame, statusbar > label { border-image: url("assets/statusbar-frame.png") 2/2px stretch; }
+
+statusbar frame { padding: 0; }
+
+statusbar frame > border { border: 0; }
+
+statusbar { margin: 0 -9px; }
+
+/************* listboxes * */
+list row { padding: 5px; }
+
+list row:hover { background-color: shade(#dcdad5, 1.05); }
+
+/************** separators * */
+separator.horizontal { border-image: url("assets/separator-horizontal.png") 1/1px stretch; padding: 1px; }
+
+separator.vertical { border-image: url("assets/separator-vertical.png") 1/1px stretch; padding: 1px; }
+
+/********* paned * */
+paned > separator { background: url("assets/paned-separator-vertical.png") no-repeat center; -gtk-icon-source: none; padding: 1px; }
+
+paned > separator:hover { background-color: shade(#dcdad5, 1.05); }
+
+paned.vertical > separator { background-image: url("assets/paned-separator-horizontal.png"); }
+
+/********** frames * */
+frame > border { border-image: url("assets/frame-etched-out.png") 2/2px stretch; padding: 2px; }
+
+frame { /* LibreOffice combobox's dropdown */ border-image: url("assets/menu.png") 3/3px stretch; padding: 3px; }
+
+box > frame { border: 0; padding: 0; }
+
+/************** button box * */
+buttonbox.horizontal button { margin: .2em .4em; }
+
+buttonbox.horizontal button:first-child { margin-left: 0; }
+
+buttonbox.horizontal button:last-child { margin-right: 0; }
+
+progressbar trough, levelbar trough, scale trough, treeview.view.trough, treeview.view.trough:selected, scrollbar { background-color: shade(#dcdad5, 0.75); border: solid 1px shade(#dcdad5, 0.6); border-bottom-color: white; border-right-color: white; color: #000000; }
+
+/********* scale * */
+scale { margin: 1px; }
+
+scale slider { background: #dcdad5 no-repeat center; border-image: url("assets/scale-slider-border.png") 2/2px stretch; }
+
+scale slider:hover { background-color: shade(#dcdad5, 1.05); }
+
+scale trough:disabled { background-color: #dcdad5; }
+
+scale.horizontal trough { padding: 0 1.2em; }
+
+scale.vertical trough { padding: 1.2em 0; }
+
+scale.horizontal slider { background-image: url("assets/scale-slider-horizontal.png"); min-height: 1em; min-width: 2.4em; }
+
+scale.vertical slider { background-image: url("assets/scale-slider-vertical.png"); min-height: 2.4em; min-width: 1em; }
+
+scale.horizontal mark indicator { background-color: shade(#dcdad5, 0.56); min-height: 8px; min-width: 1px; }
+
+scale.vertical mark indicator { background-color: shade(#dcdad5, 0.56); min-height: 1px; min-width: 8px; }
+
+/*************** color scale * */
+scale.color trough { padding: 0; }
+
+scale.color slider { background-color: transparent; border: 0; }
+
+scale.color.horizontal slider { background-image: url("assets/color-scale-slider-horizontal.png"); min-height: 14px; min-width: 16px; }
+
+scale.color.vertical slider { background-image: url("assets/color-scale-slider-vertical.png"); min-height: 16px; min-width: 14px; }
+
+/*************** progressbar * */
+progressbar { font-size: .8em; }
+
+progressbar trough { padding: 1px; }
+
+progressbar progress, treeview.view.progressbar { background: #4b6983; border-image: url("assets/progress.png") 2/2px stretch; color: #ffffff; }
+
+progressbar.horizontal, progressbar.horizontal progress, progressbar.horizontal trough { min-height: 1.3em; }
+
+progressbar.vertical, progressbar.vertical progress, progressbar.vertical trough { min-width: 1.3em; }
+
+treeview.view.trough { padding: 2px; }
+
+/************ levelbar * */
+levelbar block { margin: 1px; padding: 3px; }
+
+levelbar block.filled { background: #4b6983; border-image: url("assets/progress.png") 2/2px stretch; }
+
+/********** switch * */
+switch { background-color: shade(#dcdad5, 0.9); border-image: url("assets/button-pressed.png") 3/3px stretch; min-height: 2em; }
+
+switch slider { background-color: #dcdad5; border-image: url("assets/button.png") 3/3px stretch; margin: 2px; padding: .3em; }
+
+switch:checked { background: #4b6983; color: #ffffff; }
+
+/************ treeview * */
+.view { background: #ffffff; }
+
+.sidebar, scrolledwindow, scrolledwindow.frame { border-image: url("assets/frame-etched-out.png") 3/3px stretch; padding: 2px; }
+
+/************ tooltips * */
+tooltip, tooltip.background { background-color: #ffffbf; border: solid 1px rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.8); }
+
+tooltip *, .tooltip * { background-color: transparent; }
+
+tooltip decoration { border: 0; }
+
+/************* calendars * */
+calendar { padding: 2px; }
+
+calendar.header { background: #dcdad5; }
+
+calendar.view { border-image: url("assets/frame-etched-out.png") 2/2px stretch; }
+
+calendar:indeterminate { color: rgba(0, 0, 0, 0.4); }
+
+calendar.highlight { background-color: #4b6983; color: #ffffff; }
+
+/************ infobars * */
+.info { background-color: #a7c6e1; }
+
+.warning { background-color: #fcaf3e; }
+
+.error { background-color: #f03838; }
+
+.info, .warning, .error { border-image: url("assets/frame-etched-out.png") 3/3px stretch; }
+
+/*********************** file chooser dialog * */
+dialog filechooser placessidebar.sidebar.frame .sidebar-row { padding: .3em 1em; }
+
+dialog filechooser .frame.sidebar .sidebar-row label { padding-left: .8em; }
+
+dialog filechooser placessidebar button { background: transparent; border: 0; padding: 0; }
+
+dialog filechooser placessidebar *:hover button { background-color: transparent; }
+
+dialog filechooser stack { background: #dcdad5; }
+
+dialog filechooser .path-bar .slider-button, dialog filechooser .path-bar .slider-button:active { padding: 5px 0; }
+
+dialog filechooser .path-bar image { margin-right: 5px; }
+
+dialog filechooser .frame.sidebar separator { border-image: url("assets/separator-horizontal.png") 1/1px stretch; margin: 3px 5px; padding: 1px; }
+
+dialog filechooser actionbar { border: solid 1px shade(#dcdad5, 0.6); margin-top: 5px; padding: 7px; }
+
+dialog filechooser frame { padding: 0; }
+
+dialog filechooser frame border { border: 0; }
+
+/***************** color chooser * */
+dialog colorchooser colorswatch { border-image: url("assets/frame-etched-out.png") 2/2px stretch; padding: 2px; }
+
+dialog colorchooser colorswatch.dark * { color: white; }
+
+dialog colorchooser colorswatch.light * { color: black; }
+
+dialog colorchooser #add-color-button { border-image: url("assets/button.png") 3/3px stretch; }
+
+dialog colorchooser colorswatch:selected * { background: transparent; }
+
+colorchooser .popover { background: #dcdad5; border-image: url("assets/button.png") 3/3px stretch; }
+
+/**************** print dialog * */
+printdialog > box > box { padding: 5px; }
+
+printdialog box { background: #dcdad5; }
+
+printdialog notebook stack { border-image: url("assets/notebook.png") 3/3px stretch; padding: 2px; }
+
+printdialog paper { background-color: #ffffff; border: solid 1px shade(#dcdad5, 0.6); }
+
+/********************* Spinner Animation * */
+@keyframes spin { to { -gtk-icon-transform: rotate(1turn); } }
+
+spinner { background-color: transparent; opacity: 0; }
+
+spinner:checked { opacity: 1; animation: spin 1s linear infinite; }
+
+/** Copyright (c) 2017 Vlasta Vesely <vlastavesely@protonmail.ch> This file is part of Raleigh Reloaded GTK theme. This is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 as published by the Free Software Foundation. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>. */
+/******** Caja * */
+.caja-navigation-window toolbar combobox button:not(:hover):not(:checked) { border-image: url("assets/button.png") 3/3px stretch; }
+
+.caja-navigation-window tab button, .caja-navigation-window tab button:active:hover { padding: 0px; }
+
+.caja-side-pane notebook > stack { border-image: url("assets/entry.png") 3/3px stretch; padding: 2px; }
+
+.caja-side-pane treeview { padding: .2em 0; }
+
+.caja-navigation-window statusbar border { border: 0; }
+
+.caja-navigation-window notebook > stack { border-image: url("assets/notebook.png") 3/3px stretch; padding: 2px; }
+
+.caja-navigation-window notebook .view { background: #ffffff; }
+
+.caja-navigation-window notebook *:selected { background: #dcdad5; color: #000000; }
+
+.caja-navigation-window notebook *:focus .view:selected { background-color: #4b6983; color: #ffffff; }
+
+.caja-navigation-window notebook .view.rubberband { background-color: rgba(75, 105, 131, 0.3); border: 1px solid #4b6983; }
+
+.caja-notebook stack > box > frame > border { background: #a7c6e1; }
+
+.caja-side-pane notebook scrolledwindow, .caja-notebook scrolledwindow { border: 0; padding: 0; }
+
+.caja-desktop-window box, .caja-desktop-window scrolledwindow, .caja-navigation-window statusbar frame { border: 0; }
+
+/********* Pluma * */
+.pluma-window notebook header tabs { min-height: 2.2em; min-width: 2.2em; }
+
+.pluma-window statusbar > *:last-child { padding-right: 5px; }
+
+/************** Mate Panel * */
+PanelToplevel > grid { border-image: url("assets/button.png") 2/2px stretch; padding: 2px; }
+
+#clock-applet-button { border: 0; }
+
+#clock-applet-button label { padding: 0 .75rem; }
+
+MatePanelAppletFrameDBus { background: transparent url("assets/mate-panel-background.png") left bottom; border: solid 1px white; border-bottom-color: black; }
+
+PanelToplevel menubar { border: 0; margin: -1px; }
+
+wnck-tasklist button.flat:not(:hover):not(:checked) { border-image: url("assets/button.png") 2/2px stretch; }
+
+/***************** Mate Terminal * */
+.mate-terminal notebook stack { padding: 0; }
+
+.mate-terminal notebook header { padding-bottom: 2px; }
+
+/****************** GvcMixerDialog * */
+GvcMixerDialog border { padding: 10px; }
+
+GvcMixerDialog gvc-level-bar * { background: shade(#dcdad5, 0.9); }
+
+GvcMixerDialog gvc-level-bar *:selected { background: #4b6983; }
+
+/*************** Lock Screen * */
+.lock-dialog notebook > stack { border: 0; }
+
+/** Copyright (c) 2017 Vlasta Vesely <vlastavesely@protonmail.ch> This file is part of Raleigh Reloaded GTK theme. This is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 as published by the Free Software Foundation. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>. */
+/******** Panel * */
+.xfce4-panel frame { border: 0; padding: 0; }
+
+/** Copyright (c) 2017 Vlasta Vesely <vlastavesely@protonmail.ch> This file is part of Raleigh Reloaded GTK theme. This is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 as published by the Free Software Foundation. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>. */
+/*************** Firefox ESR * */
+scrollbar.vertical .button.top { background: #dcdad5 center url("assets/pan-up-symbolic-fallback.png") no-repeat; color: transparent; }
+
+scrollbar.vertical .button.bottom { background: #dcdad5 center url("assets/pan-down-symbolic-fallback.png") no-repeat; color: transparent; }
+
+scrollbar.horizontal .button.left { background: #dcdad5 center url("assets/pan-start-symbolic-fallback.png") no-repeat; color: transparent; }
+
+scrollbar.horizontal .button.right { background: #dcdad5 center url("assets/pan-end-symbolic-fallback.png") no-repeat; color: transparent; }
+
+scrollbar.vertical .button.top:disabled { background-image: url("assets/pan-up-symbolic-disabled-fallback.png"); }
+
+scrollbar.vertical .button.bottom:disabled { background-image: url("assets/pan-down-symbolic-disabled-fallback.png"); }
+
+scrollbar.horizontal .button.left:disabled { background-image: url("assets/pan-start-symbolic-disabled-fallback.png"); }
+
+scrollbar.horizontal .button.right:disabled { background-image: url("assets/pan-end-symbolic-disabled-fallback.png"); }
+
+menu separator { padding-top: 1px; }
+
+/*********** LightDM * */
+.lightdm-gtk-greeter button { padding: .7rem; }
+
+.lightdm-gtk-greeter entry { padding: .7rem; }
+
+/* 2. 0 */
+.lightdm-gtk-greeter #login_window.background, #login_window.background.lightdm-gtk-greeter, #login_window.background.lightdm-gtk-greeter box.vertical { border-image: url("assets/frame-etched-out.png") 2/2px stretch; }
+
+/* 2.0. */
+.lightdm-gtk-greeter #login_window.background #buttonbox_frame, #login_window.background.lightdm-gtk-greeter #buttonbox_frame { padding-top: 1rem; }
+
+/* GTK NAMED COLORS ---------------- use responsibly! */
+/* Default color scheme */
+@define-color theme_base_color #ffffff;
+@define-color theme_bg_color #dcdad5;
+@define-color theme_fg_color #000000;
+@define-color theme_selected_bg_color #4b6983;
+@define-color theme_selected_fg_color #ffffff;
+@define-color theme_tooltip_bg_color #ffffbf;
+@define-color theme_tooltip_fg_color #000000;
+@define-color theme_text_color #000000;
+@define-color theme_info_bg_color #a7c6e1;
+@define-color theme_warning_bg_color #fcaf3e;
+@define-color theme_error_bg_color #f03838;
