@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2021 WebFreak <gh@webfreak.org>
  * Copyright (c) 2017 Vlasta Vesely <vlastavesely@protonmail.ch>
  *
  * This file is part of Raleigh Reloaded GTK theme.
@@ -16,10 +17,33 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import 'colors';
-@import 'gtk-widgets';
-@import 'mate-applications';
-@import 'xfce-applications';
-@import 'phosh-applications';
-@import 'other-applications';
-@import 'colors-public';
+/* phosh app launcher & wm */
+
+phosh-app-grid {
+	background: $bg_color;
+}
+
+phosh-app-grid-button button, phosh-activity box button {
+	@include button;
+
+	&, &:hover {
+		padding: .35em;
+	}
+}
+
+.phosh-notification-tray, .phosh-notification-tray list {
+	@include frame;
+	border-radius: 0;
+}
+
+phosh-notification-frame {
+	border-radius: 0;
+	background-color: $bg_color;
+	margin: 0;
+	border-image: url("assets/menu.png") 3 / 3px stretch;
+}
+
+phosh-media-player {
+	border-radius: 0;
+	@include frame;
+}
